@@ -21,10 +21,7 @@ import { SliderFormattingExample} from './slider.component';
 
 
 
- <rating22
-[rating]="data.temperature"
-[numOfReviews]="data.humidity">
- </rating22>
+
 
  <br>
  {{ data.description }}
@@ -50,5 +47,11 @@ export class RoomComponent {
 [temperature]="data.temperature"
 [humidity]="data.humidity">
  </slider>
+
+ <rating22
+[rating]="data.temperature"
+[numOfReviews]="data.humidity">
+ </rating22>
+
  */
 } 

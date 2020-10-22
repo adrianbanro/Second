@@ -85,6 +85,7 @@ export class AppComponent {
     //*ngFor="let counter of numberOfQuestions"
 
     //<rooms></rooms>
+    //<product [data]="product"></product>
 
     myModel=0;
   title = 'Second997';

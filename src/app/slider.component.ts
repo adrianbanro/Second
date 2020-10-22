@@ -5,13 +5,13 @@ import {MatSliderModule} from '@angular/material/slider';
     selector: 'slider',
     template: `
       Temperature: <br>
-    <mat-slider [(ngModel)]="temperature"  min="0" max="100" step="5" >  </mat-slider>
+    <mat-slider [(ngModel)]="temperature"  min="0" max="100" step="0.5" >  </mat-slider>
     <div>{{temperature}}  </div>
 
     <br>
 
       Humidity: <br>
-    <mat-slider [(ngModel)]="humidity"  min="0" max="100" step="5" >  </mat-slider>
+    <mat-slider [(ngModel)]="humidity"  min="0" max="100" step="0.5" >  </mat-slider>
     <div>{{humidity}}  </div>
    
     `,
