@@ -11,7 +11,9 @@ import { Component, Input } from '@angular/core'
  (click)="onClick(1)"
  >
  </i>
+ Rating:
  {{ rating }}
+ Number of reviews:
  {{ numOfReviews }}
     `
    })

@@ -18,10 +18,16 @@ import { RatingComponent } from './rating.component';
 import { Rating22Component } from './rating22.component';
 import { ProductComponent } from './product.component';
 import { UserFormComponent } from './user-form.component';
+import {MatSliderModule} from '@angular/material/slider';
+//import {MatSliderModule} from '@angular/material';
+import { SliderFormattingExample } from './slider.component';
+import { AddrezzComponent } from './addrezz/addrezz.component';
+
+import { RoomsComponent } from './rooms.component';
 
 @NgModule({
   declarations: [
-    AppComponent, ProductsComponent, FormcompComponent, RatingComponent, Rating22Component, ProductComponent, UserFormComponent
+    AppComponent, RoomsComponent, ProductsComponent, SliderFormattingExample, FormcompComponent, RatingComponent, Rating22Component, ProductComponent, UserFormComponent, AddrezzComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +39,8 @@ import { UserFormComponent } from './user-form.component';
     MatRadioModule,
     MatCardModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    MatSliderModule
   ],
   providers: [],
   bootstrap: [AppComponent]
