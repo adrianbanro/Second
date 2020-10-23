@@ -1,6 +1,7 @@
 import {Component, Input} from '@angular/core';
 import { Rating22Component } from './rating22.component';
 import { SliderFormattingExample} from './slider.component';
+import { Output, EventEmitter } from '@angular/core';
 
 @Component({
  selector: 'product',
@@ -25,7 +26,8 @@ import { SliderFormattingExample} from './slider.component';
 
 <br>
 
- <slider
+ <slider   (modifiedRoomData_Event)="modifyRoom($event)"
+ [room]="data.productName"
  [temperature]="data.rating"
  [humidity]="data.numOfReviews">
   </slider>
@@ -49,6 +51,14 @@ import { SliderFormattingExample} from './slider.component';
 })
 export class ProductComponent {
  @Input() data;
+
+ @Output() updatedRoomData_Event = new EventEmitter<object>();
+
+ modifyRoom(modifiedRoomData: object) {
+    //this.items.push(newItem);
+    console.log("modified Room Data: ",modifiedRoomData);
+    this.updatedRoomData_Event.emit(modifiedRoomData);
+  }
  
  /*
  <div class="media">
