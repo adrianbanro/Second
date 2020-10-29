@@ -7,7 +7,8 @@ import { ProductComponent } from '././product.component';
     selector: 'products',
     template: `
 
-    <h2>Rooms</h2>
+    <div style="background-color:lavenderblush;">
+    
     
     <div class="btn-toolbar">
     <div *ngFor="let product of products">
@@ -15,9 +16,60 @@ import { ProductComponent } from '././product.component';
     <button class="btn btn-primary mat-raised-button" (click)="onClickMe($event,product.productName)">
     {{product.productName}}
     </button>
-  
     </div>
     </div>
+    </div>
+
+    <div class="row">
+
+    <div class="col-md-6 col-lg-6 col-sm-6 text-center" style="background-color:lavenderblush;">
+    <h2>Active Room Panel</h2>
+
+    
+    <div *ngFor="let product of products">
+    <div *ngIf="product.productName==this.activeRoom">
+    <product (updatedRoomData_Event)="updateRoom($event)" [show]="detailVisibility" [data]="product"></product>
+    </div>
+    </div>
+    </div>
+
+
+
+<div class="col-md-6 col-sm-6 text-center"  style="background-color:lavenderblush;">
+<mat-grid-list cols="2" rowHeight="1:1"  gutterSize="10px">
+<mat-grid-tile *ngFor="let product of products" >
+  <mat-card style="height:100%" class="dashboard-card" (click)="onClickMe($event,product.productName)">
+    <mat-card-header>
+      <mat-card-title>
+        {{product.productName}}
+        <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
+          <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu" xPosition="before">
+          <button mat-menu-item (click)="onClickMe($event,product.productName)">Modify Climat</button>
+          <button mat-menu-item>Freeze Climat</button>
+        </mat-menu>
+      </mat-card-title>
+    </mat-card-header>
+    
+    <mat-card-content style="width:100%" class="dashboard-card-content">
+      <div></div>
+      <product [show]="dashboardVisibility" [data]="product"></product>
+    </mat-card-content>
+  </mat-card>
+</mat-grid-tile>
+</mat-grid-list>
+</div>
+
+    </div>
+
+
+
+
+
+
+
+
 
     <mat-grid-list cols="3" rowHeight="550px">
     <mat-grid-tile *ngFor="let product of products" >
@@ -86,6 +138,7 @@ import { ProductComponent } from '././product.component';
       // products = ["Learning React", "Learning Angular", "ASP.NET" ];
        // //<product [data]="product"></product>
        //[colspan]="card.cols" [rowspan]="card.rows"
+       //<h2>Rooms</h2>
 
 /*
 @Component({
@@ -102,6 +155,35 @@ import { ProductComponent } from '././product.component';
     <div *ngFor="let product of products">
     <product [data]="product"></product>
     </div>
+
+
+
+    <div class="colcol col-md-0 col-sm-0  text-center" style="background-color:lavender;">
+    <div class="well well-sm">
+        <div>
+            xzczxv
+            zxv
+            zxv
+            zxv
+            zxv
+            zxv
+            zxv
+            zxv
+            zxv
+            zxv
+            zx
+            vzxv
+            zxv
+            zx
+            vzxv
+            z
+            xvzx
+            v
+            zxv
+
+        </div>
+    </div>
+</div>
 
     
    })*/

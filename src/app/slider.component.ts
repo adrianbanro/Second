@@ -14,6 +14,8 @@ import { Output, EventEmitter } from '@angular/core';
     <div>{{temperature}} degr.Celsius </div>
 
     <br>
+    <br>
+    <br>
 
       Humidity: <br>
     <mat-slider [(ngModel)]="humidity"  (input)="onHumidityChange($event)" min="0" max="100" step="0.5" >  </mat-slider>

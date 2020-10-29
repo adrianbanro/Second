@@ -12,10 +12,10 @@ import { Component, Input } from '@angular/core'
  >
  </i>
  Temperature:
- {{ rating }}
+ {{ rating }} degr.C
  <br>
  Humidity:
- {{ numOfReviews }}
+ {{ numOfReviews }}%
     `
    })
    export class Rating22Component{

@@ -12,43 +12,91 @@ import { Output, EventEmitter } from '@angular/core';
  <div class="media">
  <div class="media-left">
  <a href="#">
- <img class="media-object" src="{{ data.imageUrl }}">
  </a>
  <br>
  </div>
- <div class="media-body">
-<div class="media-body">
+
+ <div class="container">
+ <div class="row" style="well well-sm">
+   <div class="col"   >
+   <img class="media-object" src="{{ data.imageUrl }}">
+   </div>
+   <div class="col" style="border-radius: 5px; background: #73AD21">
+   <h4 class="media-heading">
+   {{ data.productName }}
+   </h4>
+   <rating22
+   [rating]="data.rating"
+   [numOfReviews]="data.numOfReviews">
+    </rating22>
+   </div>
+
+ </div>
+
+ <div class="row">
+ <div class="col">
  <h4 class="media-heading">
- {{ data.productName }}
+ 
  </h4>
- <br>
+
  <h4 class="media-heading">
  {{ data.description }}
  </h4>
- <br>
- {{ data.releasedDate }}
- <br>
- <rating22
-[rating]="data.rating"
-[numOfReviews]="data.numOfReviews">
- </rating22>
-
-<br>
-
-<div *ngIf="show==1">
- <slider   (modifiedRoomData_Event)="modifyRoom($event)"
- [room]="data.productName"
- [temperature]="data.rating"
- [humidity]="data.numOfReviews">
-  </slider>
-  </div>
+ </div>
+ </div>
 
 
+ <div class="row">
+ 
+   <div class="col">
 
-  <div *ngIf="show==1">
-  <mat-slide-toggle [(ngModel)]="toggled" (change)="onChange($event)">Parameters Saved</mat-slide-toggle>
-  <div>{{toggled}} toggle_button </div>
-  </div>
+   </div>
+   <div class="col" style="border-radius: 5px; background: #ccff99">
+   <div *ngIf="show==1">
+   <slider   (modifiedRoomData_Event)="modifyRoom($event)"
+   [room]="data.productName"
+   [temperature]="data.rating"
+   [humidity]="data.numOfReviews">
+    </slider>
+    </div>
+   </div>
+   <div class="col">
+   <div *ngIf="show==1">
+   <mat-slide-toggle [(ngModel)]="toggled" (change)="onChange($event)" style="height:30%; position:absolute; bottom:10px;">Saved</mat-slide-toggle>
+   <div>{{toggled}}</div>
+   </div>
+ </div>
+
+ </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+
+
+ <div class="media-body">
+<div class="media-body">
+
+
+
+
+
+
+
+ 
 
 
 </div>
@@ -80,6 +128,8 @@ export class ProductComponent {
   console.log("555 show",this.show);
   //console.log("555 show",this.visibility);
   //console.log("555 visibilityw",visibility);
+  //<img class="media-object" src="src/app/Room_Images/IMG_20201026_120629.jpg">
+  // {{ data.releasedDate }}
 }
 
 
