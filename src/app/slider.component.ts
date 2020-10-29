@@ -10,14 +10,14 @@ import { Output, EventEmitter } from '@angular/core';
 <h2> {{room}} </h2>  <br>
 
       Temperature: <br>
-    <mat-slider [(ngModel)]="temperature"  (input)="onTemperatureChange($event)" min="0" max="100" step="0.5" >  </mat-slider>
-    <div>{{temperature}}  </div>
+    <mat-slider [(ngModel)]="temperature"  (input)="onTemperatureChange($event)" min="15" max="25" step="0.5" >  </mat-slider>
+    <div>{{temperature}} degr.Celsius </div>
 
     <br>
 
       Humidity: <br>
     <mat-slider [(ngModel)]="humidity"  (input)="onHumidityChange($event)" min="0" max="100" step="0.5" >  </mat-slider>
-    <div>{{humidity}}  </div>
+    <div>{{humidity}}%</div>
    
     `,
     styles: [`

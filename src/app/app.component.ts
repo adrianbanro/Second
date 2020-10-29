@@ -8,7 +8,9 @@ import { SliderFormattingExample} from './slider.component';
 @Component({
   selector: 'app-root',
   //templateUrl: './app.component.html',
-  template: `<h2>{{title}}</h2>
+  template: `
+  <!--
+  <h2>{{title}}</h2>
   <img src="{{imageUrl}}" />
   <button
 class="btn btn-primary"
@@ -19,6 +21,12 @@ class="btn btn-primary"
 <user-form></user-form>
 
 <slider></slider>
+
+<app-tree></app-tree>
+<app-table></app-table>
+<app-dashboard></app-dashboard>
+
+<mat-slide-toggle>Szlide</mat-slide-toggle>
 
 
 
@@ -32,10 +40,33 @@ class="btn btn-primary"
 <mat-slider [(ngModel)]="myModel" min="0" max="100">  </mat-slider>
 <div>{{myModel}}  </div>
 
+-->
 
 
 
-<div class="row">
+
+
+
+
+
+  <products></products>` ,
+  styleUrls: ['./app.component.css'],
+  providers: [ProductService]
+})
+export class AppComponent {
+    //<slider></slider>
+//<mat-slider min="1" max="5" step="0.5" value="1.5"></mat-slider>
+    //*ngFor="let counter of numberOfQuestions"
+
+    //<rooms></rooms>
+    //<product [data]="product"></product>
+
+    //<app-navigation></app-navigation>
+
+
+
+    /*
+    <div class="row">
 <div class="col-xs-8">
                     <h2>Progress:</h2>
                     <div class="btn-toolbar">
@@ -44,11 +75,7 @@ class="btn btn-primary"
                         <div >
                         <button class="btn btn-primary">
                         </button>
-                        </div>
-                        
-                            
-	                     
-                           
+                        </div>   
                         
                     </div>
                 </div>
@@ -72,20 +99,7 @@ class="btn btn-primary"
                 </div>
 
 </div>
-
-
-
-  <products></products>` ,
-  styleUrls: ['./app.component.css'],
-  providers: [ProductService]
-})
-export class AppComponent {
-    //<slider></slider>
-//<mat-slider min="1" max="5" step="0.5" value="1.5"></mat-slider>
-    //*ngFor="let counter of numberOfQuestions"
-
-    //<rooms></rooms>
-    //<product [data]="product"></product>
+    */
 
     myModel=0;
   title = 'Second997';

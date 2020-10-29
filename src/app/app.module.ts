@@ -19,15 +19,31 @@ import { Rating22Component } from './rating22.component';
 import { ProductComponent } from './product.component';
 import { UserFormComponent } from './user-form.component';
 import {MatSliderModule} from '@angular/material/slider';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 //import {MatSliderModule} from '@angular/material';
 import { SliderFormattingExample } from './slider.component';
 import { AddrezzComponent } from './addrezz/addrezz.component';
 
 import { RoomsComponent } from './rooms.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatIconModule } from '@angular/material/icon';
+import { LayoutModule } from '@angular/cdk/layout';
+import { TableComponent } from './table/table.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { NavigationComponent } from './navigation/navigation.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import { TreeComponent } from './tree/tree.component';
+import { MatTreeModule } from '@angular/material/tree';
 
 @NgModule({
   declarations: [
-    AppComponent, RoomsComponent, ProductsComponent, SliderFormattingExample, FormcompComponent, RatingComponent, Rating22Component, ProductComponent, UserFormComponent, AddrezzComponent
+    AppComponent, RoomsComponent, ProductsComponent, SliderFormattingExample, FormcompComponent, RatingComponent, Rating22Component, ProductComponent, UserFormComponent, AddrezzComponent, DashboardComponent, TableComponent, NavigationComponent, TreeComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +56,19 @@ import { RoomsComponent } from './rooms.component';
     MatCardModule,
     ReactiveFormsModule,
     FormsModule,
-    MatSliderModule
+    MatSliderModule,
+    MatSlideToggleModule,
+    MatGridListModule,
+    MatMenuModule,
+    MatIconModule,
+    LayoutModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatListModule,
+    MatTreeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

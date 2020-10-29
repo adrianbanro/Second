@@ -3,22 +3,31 @@ import { Rating22Component } from './rating22.component';
 import { SliderFormattingExample} from './slider.component';
 import { Output, EventEmitter } from '@angular/core';
 
+
+
 @Component({
  selector: 'product',
  template: `
+ <div *ngIf="this.showProduct==1">
  <div class="media">
  <div class="media-left">
  <a href="#">
  <img class="media-object" src="{{ data.imageUrl }}">
  </a>
+ <br>
  </div>
  <div class="media-body">
 <div class="media-body">
  <h4 class="media-heading">
  {{ data.productName }}
  </h4>
+ <br>
+ <h4 class="media-heading">
+ {{ data.description }}
+ </h4>
+ <br>
  {{ data.releasedDate }}
-
+ <br>
  <rating22
 [rating]="data.rating"
 [numOfReviews]="data.numOfReviews">
@@ -26,18 +35,26 @@ import { Output, EventEmitter } from '@angular/core';
 
 <br>
 
+<div *ngIf="show==1">
  <slider   (modifiedRoomData_Event)="modifyRoom($event)"
  [room]="data.productName"
  [temperature]="data.rating"
  [humidity]="data.numOfReviews">
   </slider>
+  </div>
 
- <br>
- {{ data.description }}
+
+
+  <div *ngIf="show==1">
+  <mat-slide-toggle [(ngModel)]="toggled" (change)="onChange($event)">Parameters Saved</mat-slide-toggle>
+  <div>{{toggled}} toggle_button </div>
+  </div>
+
+
 </div>
  </div>
  </div>
-
+ </div>
 
 
 
@@ -51,8 +68,27 @@ import { Output, EventEmitter } from '@angular/core';
 })
 export class ProductComponent {
  @Input() data;
+ @Input() show;
 
  @Output() updatedRoomData_Event = new EventEmitter<object>();
+
+ isValid = false;
+ toggled;
+ showProduct=1;
+
+ constructor(){
+  console.log("555 show",this.show);
+  //console.log("555 show",this.visibility);
+  //console.log("555 visibilityw",visibility);
+}
+
+
+
+onChange($event: any) {
+  console.log("Event: ",$event);
+  console.log("toggled: ",this.toggled);
+  this.showProduct=(this.toggled==true,1,0);
+}
 
  modifyRoom(modifiedRoomData: object) {
     //this.items.push(newItem);
@@ -60,6 +96,10 @@ export class ProductComponent {
     this.updatedRoomData_Event.emit(modifiedRoomData);
   }
  
+
+
+//import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+
  /*
  <div class="media">
  <div class="media-left">
@@ -82,5 +122,13 @@ export class ProductComponent {
 </div>
  </div>
  </div>
+
+  <!--
+show:
+{{show}}
+  -->
+
  */
+
+
 } 
